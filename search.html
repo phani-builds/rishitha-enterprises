@@ -134,11 +134,11 @@
         <div class="footer-content">
             <div class="footer-col">
                 <h3>Rishitha Safety Nets</h3>
-                <p>Professional installers of Safety Nets and Invisible Grills. Serving Andhra Pradesh and surrounding areas.</p>
+                <p>Your trusted partner for premium quality safety solutions. We provide comprehensive safety nets, grills, and protection systems.</p>
                 <div class="social-links">
-                    <a href="https://wa.me/919885364486" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="tel:9440039772"><i class="fas fa-phone"></i></a>
-                    <a href="mailto:rishithasafetynetshyderabad@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/919440039772" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:9440039772" onclick="return gtag_report_conversion(this.href);" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:rishithasafetynetshyderabad@gmail.com"><i class="fas fa-envelope"></i></a>  
                 </div>
             </div>
             <div class="footer-col">
@@ -151,12 +151,13 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Services</h4>
+                                <h4>Our Products</h4>
                 <ul>
-                    <li><a href="safety-net.html">Balcony Safety Net</a></li>
-                    <li><a href="anti-bird-net.html">Pigeon Net</a></li>
                     <li><a href="invisible-grill.html">Invisible Grill</a></li>
-                    <li><a href="sports-net.html">Cricket Net</a></li>
+                    <li><a href="safety-net.html">Safety Nets</a></li>
+                    <li><a href="sports-net.html">Sports Nets</a></li>
+                    <li><a href="anti-bird-net.html">Anti Bird Net</a></li>
+                    <li><a href="wire-mesh.html">Wire Mesh</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -165,7 +166,8 @@
                     <li><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</li>
                     <li><i class="fas fa-phone"></i> +91 9440039772</li>
                     <li><i class="fas fa-envelope"></i> rishithasafetynetshyderabad@gmail.com</li>
-</ul>
+<li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919440039772" target="_blank">WhatsApp Us</a></li>   
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -175,133 +177,38 @@
     </div>
 </footer>
 
-<a href="tel:9440039772" class="call-float" aria-label="Call Now"><i class="fas fa-phone"></i></a>
-<a href="https://wa.me/919885364486?text=Hello" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+<!-- Floating Call Button -->
+<a href="tel:9440039772" onclick="return gtag_report_conversion(this.href);" class="call-float" aria-label="Call Now">
+    <i class="fas fa-phone"></i>
+</a>
 
-<script src="js/script.js"></script>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919440039772?text=Hello%20Rishitha%20Safety%20Nets,%20I%20would%20like%20to%20inquire%20about%20your%20services" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
 <script>
-    let allProducts = [];
-    let categories = [];
-
-    // 1. Fetch Data
-    async function loadData() {
-        try {
-            const response = await fetch('products.json');
-            const data = await response.json();
-            allProducts = data.products;
-            categories = data.categories;
-
-            initSearch();
-            renderChips();
-        } catch (error) {
-            console.error("Error loading products:", error);
-            document.getElementById('results-grid').innerHTML = '<p style="text-align:center">Error loading products. Please try again.</p>';
-        }
-    }
-
-    // 2. Initialize Search based on URL param
-    function initSearch() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const query = urlParams.get('q') || '';
-
-        document.getElementById('search-input').value = query;
-        performSearch(query);
-    }
-
-    // 3. Render Category Chips
-    function renderChips() {
-        const chipsContainer = document.getElementById('category-chips');
-        const urlParams = new URLSearchParams(window.location.search);
-        const currentQuery = urlParams.get('q') || '';
-
-        let html = `<a href="search.html" class="chip ${currentQuery === '' ? 'active' : ''}"><i class="fas fa-th-large"></i> All</a>`;
-
-        categories.forEach(cat => {
-            const isActive = currentQuery.toLowerCase() === cat.name.toLowerCase();
-            html += `<a href="search.html?q=${encodeURIComponent(cat.name)}" class="chip ${isActive ? 'active' : ''}">
-                <i class="${cat.icon}"></i> ${cat.name}
-                </a>`;
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17962054857/qmvQCN30qYQcEMnp_PRC',
+            'value': 1.0,
+            'currency': 'INR',
+            'event_callback': callback
         });
-
-        chipsContainer.innerHTML = html;
+        return false;
     }
-
-    // 4. Perform Search & Render
-    function performSearch(query) {
-        const grid = document.getElementById('results-grid');
-        const noResults = document.getElementById('no-results');
-        const countLabel = document.getElementById('results-count');
-        const queryDisplay = document.getElementById('query-display');
-
-        const cleanQuery = query.toLowerCase().trim();
-
-        // Filter logic
-        const results = allProducts.filter(p => {
-            if (!cleanQuery) return true; // Show all if empty
-
-            // Search in name, category, or keywords
-            const matchName = p.name.toLowerCase().includes(cleanQuery);
-            const matchCat = p.category.toLowerCase().includes(cleanQuery);
-            const matchKeyword = p.keywords ? p.keywords.some(k => k.toLowerCase().includes(cleanQuery)) : false;
-
-            return matchName || matchCat || matchKeyword;
-        });
-
-        // Update UI
-        if (cleanQuery) {
-            queryDisplay.textContent = `for "${query}"`;
-        } else {
-            queryDisplay.textContent = "All Products";
-        }
-
-        countLabel.textContent = `${results.length} Found`;
-
-        if (results.length === 0) {
-            grid.style.display = 'none';
-            noResults.style.display = 'block';
-        } else {
-            grid.style.display = 'grid';
-            noResults.style.display = 'none';
-            renderCards(results);
-        }
-    }
-
-    // 5. Render Product Cards (Hybrid Layout)
-    function renderCards(products) {
-        const grid = document.getElementById('results-grid');
-
-        grid.innerHTML = products.map(product => {
-            // Find category page URL logic
-            const catObj = categories.find(c => c.name === product.category);
-            const link = product.pageUrl || (catObj ? catObj.pageUrl : 'index.html');
-
-            return `
-            <article class="search-card">
-                <div class="sc-image">
-                    <img src="${product.images.main}" alt="${product.name}" loading="lazy">
-                    <span class="sc-badge">${product.category}</span>
-                </div>
-                <div class="sc-content">
-                    <h3 class="sc-title">${product.name}</h3>
-                    <p class="sc-desc">${product.shortDescription || product.description}</p>
-
-                    <div class="sc-footer">
-                        <div class="sc-actions">
-                            <a href="${link}" class="btn-icon-small btn-view-sc" aria-label="View Details"><i class="fas fa-arrow-right"></i></a>
-                            <a href="https://wa.me/919885364486?text=Hi,%20I'm%20interested%20in%20${encodeURIComponent(product.name)}" target="_blank" class="btn-icon-small btn-whatsapp-sc" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            `;
-        }).join('');
-    }
-
-    // Initialize on load
-    document.addEventListener('DOMContentLoaded', loadData);
 </script>
-
+<!-- Custom JS -->
+<script src="js/script.js"></script>
 </body>
 </html>

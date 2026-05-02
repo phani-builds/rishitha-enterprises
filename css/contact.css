@@ -287,4 +287,18 @@
     .hero-title {
         font-size: 2.5rem;
     }
+
+    .form-side {
+        padding: 1.25rem 1rem;
+    }
+
+    .contact-card-wrapper {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-side {
+        padding: 1rem 0.8rem;
+    }
 }

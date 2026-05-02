@@ -12,7 +12,7 @@ Official website for Rishitha Safety Nets - Leading installer of Safety Nets, An
 
 ## 📞 Contact
 - **Phone:** +91 9440039772
-- **WhatsApp:** [Click to Chat](https://wa.me/919885364486)
+- **WhatsApp:** [Click to Chat](https://wa.me/919440039772)
 
 ## 🛠️ Tech Stack
 - Pure HTML5, CSS3, JavaScript

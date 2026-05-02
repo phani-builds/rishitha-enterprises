@@ -426,7 +426,7 @@ ${message}
         const encodedMessage = encodeURIComponent(whatsappMessage);
 
         // WhatsApp number
-        const whatsappNumber = '919885364486';
+        const whatsappNumber = '919440039772';
 
         // Create WhatsApp URL
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
