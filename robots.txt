@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rishithaenterprises.com/sitemap.xml
+
+# Allow all product pages
+Allow: /safety-net.html
+Allow: /anti-bird-net.html
+Allow: /invisible-grill.html
+Allow: /sports-net.html
+Allow: /wire-mesh.html
+Allow: /artificial-grass-mat.html

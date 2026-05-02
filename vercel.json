@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.rishithaenterprises.com"
+        }
+      ],
+      "destination": "https://rishithaenterprises.com/:path*",
+      "permanent": true
+    }
+  ]
+}
