@@ -1,6 +1,6 @@
-# Rishitha Safety Nets
+# Rishitha Enterprises
 
-Official website for Rishitha Safety Nets - Leading installer of Safety Nets, Anti Bird Nets, Invisible Grills, Sports Nets, Wire Mesh, and Artificial Grass Mats.
+Official website for Rishitha Enterprises - Leading installer of Safety Nets, Anti Bird Nets, Invisible Grills, Sports Nets, Wire Mesh, and Artificial Grass Mats.
 
 ## 🌐 Website
 [rishithaenterprises.com](https://rishithaenterprises.com)
@@ -78,7 +78,7 @@ Simply upload all files to any static hosting service.
 Since 2019 - 6 Years of Market Presence
 
 ## 📝 License
-© 2026 Rishitha Safety Nets. All Rights Reserved.
+© 2026 Rishitha Enterprises. All Rights Reserved.
 
 ## 👨‍💻 Developed By
 **Pivenor Labs**  

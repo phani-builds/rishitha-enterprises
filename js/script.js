@@ -669,5 +669,5 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('✅ All scripts loaded successfully');
     console.log('📱 Contact: +91 9440039772');
-    console.log('🏢 Rishitha Safety Nets');
+    console.log('🏢 Rishitha Enterprises');
 });

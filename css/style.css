@@ -82,6 +82,50 @@ button {
     transition: var(--transition);
 }
 
+.header .container {
+    position: relative;
+}
+
+/* Header Tag */
+.header-tag {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 0 0 10px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.2);
+    z-index: 1001;
+    width: auto;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.header-tag i {
+    font-size: 0.9rem;
+}
+
+.header-tag:hover {
+    padding-top: 10px;
+    background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .header-tag {
+        right: 10px;
+        padding: 5px 12px;
+        font-size: 0.7rem;
+    }
+}
+
 .header.scrolled {
     box-shadow: var(--shadow-md);
 }
