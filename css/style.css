@@ -6,6 +6,9 @@
     --primary-dark: #134E4A;
     --primary-light: #14B8A6;
     --secondary-color: #FEF7ED;
+    --footer-bg: #FAF6F1;
+    --primary-soft-10: rgba(15, 118, 110, 0.1);
+    --primary-soft-20: rgba(15, 118, 110, 0.2);
     --accent-color: #EA580C;
     --text-dark: #1f2937;
     --text-light: #6b7280;
@@ -1118,7 +1121,7 @@ section {
    Footer
    =================================== */
 .footer {
-    background: #FAF6F1;
+    background: var(--footer-bg);
     color: var(--text-dark);
     padding: 4rem 0 2rem;
 }
@@ -1168,7 +1171,7 @@ section {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: rgba(15, 118, 110, 0.1);
+    background: var(--primary-soft-10);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1197,7 +1200,7 @@ section {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(15, 118, 110, 0.2);
+    border-top: 1px solid var(--primary-soft-20);
     color: var(--text-light);
 }
 
@@ -1206,7 +1209,7 @@ section {
 }
 
 .footer-bottom a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     font-weight: 600;
     transition: var(--transition);
 }
@@ -1216,7 +1219,7 @@ section {
 }
 
 .footer-heart {
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin: 0 0.25rem;
 }
 
